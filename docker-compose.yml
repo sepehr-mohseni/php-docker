@@ -9,7 +9,8 @@ services:
     build: 
       dockerfile: ./php/Dockerfile
     volumes:
-      - ./app:/app
+      - /var/www/html/vendor
+      - ./app:/var/www/html
   database:
     image: mysql:8.0
     volumes:
@@ -23,6 +24,5 @@ services:
       MYSQL_PASSWORD: password
       MYSQL_DATABASE: php-docker
     
-
 volumes:
   mysqldata:
